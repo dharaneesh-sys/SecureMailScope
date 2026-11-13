@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --color-bg: #080d16;
+  --color-sidebar: #0d1421;
+  --color-surface: #111c2b;
+  --color-elevated: #172438;
+  --color-line: #26364b;
+  --color-accent: #36d6b0;
+  --color-accent2: #68a7ff;
+  --color-warn: #f5b942;
+  --color-crit: #f06b75;
+  --color-ink: #e8eef7;
+  --color-mute: #91a0b5;
+}
+
+html, body, #root { height: 100%; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+::selection { background: color-mix(in srgb, var(--color-accent) 35%, transparent); }
+* { scrollbar-width: thin; scrollbar-color: var(--color-line) transparent; }
+:focus-visible { outline: 2px solid var(--color-accent2); outline-offset: 2px; border-radius: 6px; }
+
+.card { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: 12px; }
+.card-elevated { background: var(--color-elevated); border: 1px solid var(--color-line); border-radius: 12px; }
+.glow-accent { box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent) 30%, transparent), 0 8px 30px -12px color-mix(in srgb, var(--color-accent) 35%, transparent); }
+.hero-grad { background: radial-gradient(1200px 300px at 0% -20%, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 60%), radial-gradient(800px 260px at 100% 0%, color-mix(in srgb, var(--color-accent2) 12%, transparent), transparent 60%), var(--color-surface); }
+
+@keyframes shimmer { 0% { background-position: -400px 0; } 100% { background-position: 400px 0; } }
+.skeleton { background: linear-gradient(90deg, var(--color-elevated) 25%, #1d2d45 50%, var(--color-elevated) 75%); background-size: 800px 100%; animation: shimmer 1.4s infinite linear; border-radius: 8px; }
+@keyframes fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.fade-in { animation: fade-in 0.22s ease-out; }
+@media (prefers-reduced-motion: reduce) { .skeleton, .fade-in { animation: none; } }
+
+.table-wrap { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.data th { text-align: left; font-weight: 600; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-mute); padding: 10px 14px; border-bottom: 1px solid var(--color-line); white-space: nowrap; }
+table.data td { padding: 11px 14px; border-bottom: 1px solid color-mix(in srgb, var(--color-line) 55%, transparent); vertical-align: middle; }
+table.data tbody tr:hover { background: color-mix(in srgb, var(--color-elevated) 70%, transparent); }
+table.data tbody tr.clickable { cursor: pointer; }
+.hexdump { font-family: var(--font-mono); font-size: 12px; line-height: 1.6; }

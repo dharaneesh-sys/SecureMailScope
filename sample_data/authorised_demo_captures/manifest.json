@@ -1,0 +1,219 @@
+{
+  "valid": {
+    "smtp_starttls_tls12_complete.pcap": {
+      "title": "SMTP STARTTLS, TLS 1.2, complete handshake",
+      "protocols": [
+        "smtp"
+      ],
+      "tls_version": "TLSv1.2",
+      "cipher": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+      "rules": [
+        "SMS-STL-001",
+        "SMS-TLS-014"
+      ],
+      "absent": [
+        "SMS-TLS-001",
+        "SMS-CIP-001",
+        "SMS-CIP-003",
+        "SMS-TLS-013",
+        "SMS-STL-004",
+        "SMS-CRT-001",
+        "SMS-CRT-006"
+      ],
+      "demo": true
+    },
+    "smtp_starttls_missing_handshake.pcap": {
+      "title": "SMTP STARTTLS accepted, no TLS data captured",
+      "protocols": [
+        "smtp"
+      ],
+      "tls_version": null,
+      "cipher": null,
+      "rules": [
+        "SMS-TLS-013"
+      ],
+      "absent": [
+        "SMS-STL-001",
+        "SMS-TLS-001",
+        "SMS-CIP-001",
+        "SMS-TLS-014"
+      ],
+      "demo": true
+    },
+    "imap_starttls.pcap": {
+      "title": "IMAP STARTTLS, TLS 1.2",
+      "protocols": [
+        "imap"
+      ],
+      "tls_version": "TLSv1.2",
+      "cipher": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+      "rules": [
+        "SMS-STL-001",
+        "SMS-TLS-014"
+      ],
+      "absent": [
+        "SMS-TLS-001",
+        "SMS-CIP-001"
+      ]
+    },
+    "pop3_stls.pcap": {
+      "title": "POP3 STLS, TLS 1.2",
+      "protocols": [
+        "pop3"
+      ],
+      "tls_version": "TLSv1.2",
+      "cipher": "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+      "rules": [
+        "SMS-STL-001",
+        "SMS-TLS-014"
+      ],
+      "absent": [
+        "SMS-TLS-001",
+        "SMS-CIP-001"
+      ]
+    },
+    "smtp_deprecated_tls10.pcap": {
+      "title": "SMTP STARTTLS, deprecated TLS 1.0, 3DES, weak expired certificate",
+      "protocols": [
+        "smtp"
+      ],
+      "tls_version": "TLSv1.0",
+      "cipher": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+      "rules": [
+        "SMS-TLS-001",
+        "SMS-CIP-001",
+        "SMS-CIP-002",
+        "SMS-CIP-003",
+        "SMS-CRT-001",
+        "SMS-CRT-003",
+        "SMS-CRT-004",
+        "SMS-CRT-006"
+      ],
+      "absent": [
+        "SMS-TLS-014",
+        "SMS-TLS-013"
+      ],
+      "demo": true
+    },
+    "smtp_legacy_cipher_tls12.pcap": {
+      "title": "SMTP STARTTLS, TLS 1.2 with RC4 selected",
+      "protocols": [
+        "smtp"
+      ],
+      "tls_version": "TLSv1.2",
+      "cipher": "TLS_RSA_WITH_RC4_128_SHA",
+      "rules": [
+        "SMS-CIP-001",
+        "SMS-CIP-002",
+        "SMS-CIP-003"
+      ],
+      "absent": [
+        "SMS-TLS-001",
+        "SMS-TLS-014"
+      ]
+    },
+    "smtp_starttls_tls13.pcap": {
+      "title": "SMTP STARTTLS, TLS 1.3 (certificate encrypted)",
+      "protocols": [
+        "smtp"
+      ],
+      "tls_version": "TLSv1.3",
+      "cipher": "TLS_AES_256_GCM_SHA384",
+      "rules": [
+        "SMS-STL-001",
+        "SMS-TLS-014",
+        "SMS-CRT-005"
+      ],
+      "absent": [
+        "SMS-TLS-001",
+        "SMS-CIP-001",
+        "SMS-CRT-001"
+      ],
+      "demo": true
+    },
+    "smtp_incomplete_clienthello_only.pcap": {
+      "title": "SMTP STARTTLS, capture ends after ClientHello",
+      "protocols": [
+        "smtp"
+      ],
+      "tls_version": null,
+      "cipher": null,
+      "rules": [
+        "SMS-TLS-012",
+        "SMS-TLS-013"
+      ],
+      "absent": [
+        "SMS-TLS-001",
+        "SMS-CIP-001",
+        "SMS-TLS-014"
+      ]
+    },
+    "smtp_retransmit_reorder.pcap": {
+      "title": "SMTP STARTTLS with retransmitted and re-ordered segments",
+      "protocols": [
+        "smtp"
+      ],
+      "tls_version": "TLSv1.2",
+      "cipher": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+      "rules": [
+        "SMS-STL-001",
+        "SMS-TLS-014"
+      ],
+      "absent": [
+        "SMS-TLS-001",
+        "SMS-CIP-001"
+      ]
+    },
+    "smtp_plaintext_auth.pcap": {
+      "title": "SMTP AUTH in cleartext although STARTTLS was advertised",
+      "protocols": [
+        "smtp"
+      ],
+      "tls_version": null,
+      "cipher": null,
+      "rules": [
+        "SMS-STL-004",
+        "SMS-STL-003"
+      ],
+      "absent": [
+        "SMS-STL-001",
+        "SMS-TLS-013"
+      ]
+    },
+    "smtp_nonstandard_port.pcap": {
+      "title": "SMTP STARTTLS on non-standard port 2525",
+      "protocols": [
+        "smtp"
+      ],
+      "tls_version": "TLSv1.2",
+      "cipher": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+      "rules": [
+        "SMS-STL-001",
+        "SMS-TLS-014"
+      ],
+      "absent": [
+        "SMS-TLS-001"
+      ]
+    },
+    "smtp_starttls_rejected.pcap": {
+      "title": "SMTP STARTTLS rejected by server (454)",
+      "protocols": [
+        "smtp"
+      ],
+      "tls_version": null,
+      "cipher": null,
+      "rules": [
+        "SMS-STL-002"
+      ],
+      "absent": [
+        "SMS-STL-001",
+        "SMS-TLS-013"
+      ]
+    }
+  },
+  "invalid": {
+    "corrupted.pcap": "corrupt",
+    "empty.pcap": "empty",
+    "unsupported_linktype.pcap": "unsupported_linktype"
+  }
+}
